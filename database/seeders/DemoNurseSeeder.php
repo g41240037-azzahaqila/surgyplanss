@@ -15,7 +15,7 @@ class DemoNurseSeeder extends Seeder
     public function run(): void
     {
         $okNurseUser = User::firstOrCreate(
-            ['email' => 'perawat.ok@gmail.com'],
+            ['email' => 'perawatsurgyplan@gmail.com'],
             [
                 'name' => 'Perawat OK Demo',
                 'password' => Hash::make('password'),
