@@ -18,7 +18,7 @@ class DemoDoctorSeeder extends Seeder
         $specialist = Specialist::firstOrCreate(['name' => 'Spesialis Bedah Umum']);
 
         $doctorUser = User::firstOrCreate(
-            ['email' => 'azzahaqilaa@gmail.com'],
+            ['email' => 'doktersurgyplan@gmail.com'],
             [
                 'name' => 'Dokter Demo',
                 'password' => Hash::make('password'),
