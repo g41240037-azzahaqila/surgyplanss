@@ -11,7 +11,7 @@
     </x-slot>
 
     @php
-        $selectedPriority = old('patient_priority', 'Elektif');
+        $selectedPriority = old('patient_priority', '');
         $statusStyles = [
             'Imminent' => 'border-rose-200 bg-rose-50 text-rose-700',
             'Cito' => 'border-orange-200 bg-orange-50 text-orange-700',
@@ -293,7 +293,7 @@
                                         value="{{ $statusOption['value'] }}" class="peer sr-only"
                                         @checked($isSelected)>
                                     <div
-                                        class="flex min-h-28 flex-col justify-between rounded-2xl border p-4 shadow-sm transition-all duration-200 ease-out {{ $statusStyles[$statusOption['value']] }} hover:-translate-y-1 hover:shadow-md peer-checked:-translate-y-1 peer-checked:scale-[1.02] peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-offset-white peer-checked:shadow-xl">
+                                        class="flex min-h-28 flex-col justify-between rounded-2xl border p-4 shadow-sm transition-all duration-200 ease-out {{ $statusStyles[$statusOption['value']] }} hover:-translate-y-1 hover:shadow-md peer-checked:-translate-y-1 peer-checked:scale-[1.02] peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-offset-white peer-checked:shadow-xl peer-checked:[&_span.active-status]:opacity-100">
                                         <div class="flex items-start justify-between gap-3">
                                             <p class="text-sm font-semibold tracking-wide">
                                                 {{ $statusOption['label'] }}</p>
@@ -309,7 +309,7 @@
                                                 Pilih
                                             </span>
                                             <span
-                                                class="transition-opacity duration-200 {{ $isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }}">Aktif</span>
+                                                class="active-status transition-opacity duration-200 opacity-0 group-hover:opacity-100">Aktif</span>
                                         </div>
                                     </div>
                                 </label>
