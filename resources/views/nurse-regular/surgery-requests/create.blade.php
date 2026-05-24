@@ -156,14 +156,20 @@
 
                             <div class="grid gap-4 md:col-span-2 md:grid-cols-2 xl:col-span-3">
                                 <label class="space-y-2">
-                                    <span class="text-sm font-semibold text-slate-700">Nomor Telepon</span>
-                                    <input type="text" name="phone" value="{{ old('phone') }}"
-                                        class="w-full rounded-[10px] border-slate-200 text-sm focus:border-cyan-600 focus:ring-cyan-600"
-                                        placeholder="08xxxxxxxxxx">
-                                    @error('phone')
-                                        <p class="text-xs text-rose-600">{{ $message }}</p>
-                                    @enderror
-                                </label>
+    <span class="text-sm font-semibold text-slate-700">Nomor Telepon</span>
+    
+    <input type="text" 
+        name="phone" 
+        value="{{ old('phone') }}"
+        maxlength="12"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,12)"
+        class="w-full rounded-[10px] border-slate-200 text-sm focus:border-cyan-600 focus:ring-cyan-600"
+        placeholder="08xxxxxxxxxx">
+
+    @error('phone')
+        <p class="text-xs text-rose-600">{{ $message }}</p>
+    @enderror
+</label>
 
                                 <label class="space-y-2">
                                     <span class="text-sm font-semibold text-slate-700">Tanggal Pengajuan</span>

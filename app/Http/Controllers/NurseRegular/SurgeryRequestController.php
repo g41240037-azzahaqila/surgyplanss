@@ -73,7 +73,7 @@ class SurgeryRequestController extends Controller
             'gender' => ['required', 'string', 'max:20'],
             'origin_room' => ['required', Rule::in(['IGD', 'Bangsal', 'Poli'])],
             'address' => ['nullable', 'string'],
-            'phone' => ['nullable', 'string', 'max:30'],
+            'phone' => ['nullable', 'digits_between:10,12'],
             'diagnosis_text' => ['required', 'string', 'max:255'],
             'procedure_text' => ['required', 'string', 'max:255'],
             'requested_date' => ['required', 'date'],
